@@ -47,6 +47,7 @@
   <div>
     <img src="http://www.iphone4wallpaper.com/wp-content/uploads/2010/07/trueblood2.jpg" style="display:block">
     <img src="http://www.iphone4wallpaper.com/wp-content/uploads/2010/07/True-Blood.jpg">    
+    <img src="http://www.iphone4wallpaper.com/wp-content/uploads/2010/07/White-cheetah.jpg">
   </div>
 
 
@@ -61,7 +62,13 @@
     window.top.scrollTo(0, 1);
     
     $("img").click( function(element) {
-      $(this).css("display","none").next().css("display", "block")
+      var next = $(this).css("display","none").next()
+      if( $(next).length == 1) {
+        $(next).css("display", "block")
+      }
+      else {
+        $("img:eq(0)").css("display","block") 
+      }
     })
   })
   </script>
